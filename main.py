@@ -10,9 +10,9 @@ def send_ngl_message():
     GREEN = '\033[32m'
     RESET = '\033[0m'
 
-    ngl_username = input("NGL Username: ")
-    message = input("Message: ")
-    count = int(input("Count: "))
+    ngl_username = input("ngl username: ")
+    message = input("message: ")
+    count = int(input("count: "))
 
     success_count = 0
     not_send_count = 0
@@ -48,13 +48,13 @@ def send_ngl_message():
         if response.status_code == 200:
             not_send_count = 0
             success_count += 1
-            print(GREEN + "[+]" + RESET + f" Send =>{success_count}")
+            print(GREEN + "[+]" + RESET + f"{success_count} sent")
         else:
             not_send_count += 1
-            print(RED + "[-]" + RESET + " Not Send")
+            print(RED + "[-]" + RESET + " not sent")
 
         if not_send_count == 10:
-            print(RED + "[!]" + RESET + " Wait 5 Seconds")
+            print(RED + "[!]" + RESET + " wait 5 seconds")
             time.sleep(5)
             not_send_count = 0
         
