@@ -60,4 +60,4 @@ def send_ngl_message():
         
         clear_screen()
 
-send_ngl()
+send_ngl_message()
